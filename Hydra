@@ -1,0 +1,36 @@
+# 🛡️ TryHackMe: Hydra Lab Walkthrough
+### *Mastering Network Login Brute-Forcing & Offensive Security Tooling*
+
+![Cybersecurity](https://img.shields.io/badge/Focus-Ethical%20Hacking-red)
+![Tool](https://img.shields.io/badge/Tool-Hydra-blue)
+![Platform](https://img.shields.io/badge/Platform-TryHackMe-green)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+
+---
+
+## 📖 Overview
+This repository documents my technical journey through the **Hydra** room on TryHackMe. **Hydra** is a powerful, parallelized login cracker that supports numerous protocols. In this lab, I demonstrated how to perform dictionary attacks against **FTP**, **SSH**, and **Web-based Login Forms**.
+
+---
+
+## 🎯 Lab Objectives
+* **Enumerate** services running on the target machine (`10.10.154.209`).
+* **Execute** credential-guessing attacks using the `rockyou.txt` wordlist.
+* **Analyze** HTTP POST requests to craft precise brute-force strings.
+* **Gain** unauthorized access to the user account `molly`.
+
+---
+
+## 🛠️ Technical Breakdown
+
+### 1️⃣ Attacking the Web Portal (HTTP-POST)
+The most complex part of the lab involves attacking a web form. Unlike simple services, web forms require specific parameters found by inspecting the page source (F12).
+
+> **Scenario:** The target has a login page at `/login`. By inspecting the network traffic, I identified the input fields: `username` and `password`.
+
+**The Attack Command:**
+```bash
+hydra -l molly \
+      -P /usr/share/wordlists/rockyou.txt \
+      10.10.154.209 http-post-form \
+      "/login:username=^USER^&password=^PASS^:F=Your username or password is incorrect."
