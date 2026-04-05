@@ -43,15 +43,47 @@ $ cat /etc/profile
 ## 🏴 Solved Rooms
 
 ### 🟢 Easy
+## 🛡️ TryHackMe Labs & Technical Progression
 
-| Room | Category | Key Skills | Date |
-|------|----------|------------|------|
-| [🕸️ OWASP Top 10](https://tryhackme.com/room/owasptop10) | Web Security | XSS · SQLi · IDOR · XXE | Nov 2024 |
-| [🌐 Nmap](https://tryhackme.com/room/furthernmap) | Recon | Port scanning · NSE scripts · Stealth scans | Aug 2024 |
-| [🐧 Linux Fundamentals](https://tryhackme.com/room/linuxfundamentals1) | OS | File system · Permissions · Bash | Jul 2024 |
-| [🔍 Google Dorking](https://tryhackme.com/room/googledorking) | OSINT | Search operators · Reconnaissance | Jun 2024 |
-| [📡 Introductory Networking](https://tryhackme.com/room/introtonetworking) | Networking | OSI Model · TCP/IP · Protocols | Jun 2024 |
-| [🦆 DVWA](https://tryhackme.com/room/dvwa) | Web Security | XSS · CSRF · File upload | May 2024 |
+I actively use **TryHackMe** to sharpen my offensive and defensive security skills. Below is a summary of the labs I have completed, categorized by the technical domains they cover.
+
+### 🌐 Web Security & Advanced Exploitation
+| Room | Focus Area | Key Skills & Tools |
+| :--- | :--- | :--- |
+| **BankGPT** | AI Security | Prompt Injection · LLM manipulation |
+| **MD2PDF** | Web Security | SSRF (Server-Side Request Forgery) · Markdown manipulation |
+| **Infinity Shell** | Web Security | Remote Code Execution (RCE) · Reverse shells |
+| **Gallery** | Web Security | SQL Injection (SQLi) · File upload exploitation |
+| **Blue** | Windows | MS17-010 (EternalBlue) · Metasploit · Hashdumping |
+| **Flag Vault** | Web Security | NoSQL injection · JavaScript analysis |
+| **Lo-fi** | Web Security | LFI (Local File Inclusion) · Directory traversal |
+| **Neighbour** | Web Security | IDOR · Information Disclosure |
+| **CupidBot** | API Security | Broken Access Control · API exploitation |
+| **IDE** | Web Security | VS Code exploitation · Web-based IDE vulnerabilities |
+| **Pickle Rick** | Web Security | Command Injection · Linux enumeration |
+
+### 🛰️ Network, Recon & Infrastructure
+| Room | Focus Area | Key Skills & Tools |
+| :--- | :--- | :--- |
+| **Hydra** | Network Security | Brute-force attacks · Login exploitation |
+| **Dig Dug** | DNS | Zone transfers · Dig tool · DNS records |
+| **Ice** | Windows Security | CVE-2017-7494 · Mimikatz · Password dumping |
+| **Easy Peasy** | Recon | Nmap · GoBuster · Hash cracking |
+| **Capture** | Web Security | Brute-force · Bypassing rate limiting |
+| **DarkMatter** | Recon | Hidden directories · Password spraying |
+| **Monday Monitor** | Log Analysis | Monitoring tools · Web server logs |
+
+### 📚 Cybersecurity Fundamentals
+| Room | Category | Core Concepts |
+| :--- | :--- | :--- |
+| **Cloud Computing** | Cloud | IaaS / PaaS / SaaS · Shared responsibility model |
+| **Virtualisation** | Infrastructure | Hypervisors · VMs vs Containers |
+| **Networking Series** | Networking | DNS · HTTP/S · Client-Server model · TCP/IP |
+| **Computing Series** | Systems | OS Intro · Kernel · CPU/RAM architecture |
+| **Web Basics** | Web | HTML/CSS/JS · Domain names · Browser security |
+
+---
+*Note: All rooms listed above are classified as **Easy** difficulty, focusing on building a strong foundational knowledge in security operations and penetration testing.*
 
 ### 🟡 Medium
 
