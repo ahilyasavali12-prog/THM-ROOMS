@@ -1,6 +1,4 @@
-To make your GitHub profile stand out, it is best to format these walkthroughs using **collapsible sections**. This keeps your README clean and readable while allowing recruiters to click and expand the specific technical details of each lab.
 
-Here is the **Blue** walkthrough formatted specifically for a high-quality GitHub README:
 
 ````markdown
 # 🛡️ Technical Lab Walkthroughs
