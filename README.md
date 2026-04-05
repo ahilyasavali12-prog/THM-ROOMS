@@ -81,20 +81,12 @@ I actively use **TryHackMe** to sharpen my offensive and defensive security skil
 | **Networking Series** | Networking | DNS · HTTP/S · Client-Server model · TCP/IP |
 | **Computing Series** | Systems | OS Intro · Kernel · CPU/RAM architecture |
 | **Web Basics** | Web | HTML/CSS/JS · Domain names · Browser security |
-
 ---
-*Note: All rooms listed above are classified as **Easy** difficulty, focusing on building a strong foundational knowledge in security operations and penetration testing.*
 
-### 🟡 Medium
-
-| Room | Category | Key Skills | Date |
-|------|----------|------------|------|
-| [🔐 Linux Privilege Escalation](https://tryhackme.com/room/linprivesc) | PrivEsc | SUID · Cron · GTFOBins | Sep 2024 |
-| [🎄 Advent of Cyber 4](https://tryhackme.com/room/adventofcyber4) | Mixed | Forensics · OSINT · Malware | Dec 2024 |
-| [🛡️ Blue](https://tryhackme.com/room/blue) | Windows | EternalBlue · MS17-010 · Metasploit | Oct 2024 |
-| [💉 SQL Injection](https://tryhackme.com/room/sqlinjectionlm) | Web | UNION attacks · Blind SQLi · sqlmap | Sep 2024 |
-| [🔓 John the Ripper](https://tryhackme.com/room/johntheripper0) | Password Cracking | Hash types · Wordlists · Rules | Aug 2024 |
-| [🕵️ OSINT](https://tryhackme.com/room/ohsint) | OSINT | Metadata · Geolocation · Sock puppets | Aug 2024 |
+### 🟡 Medium Difficulty (Advanced Labs)
+| Room | Focus Area | Key Skills & Tools |
+| :--- | :--- | :--- |
+| **SharePoint Online Monitoring** | SOC Operations | Entra ID & M365 Logging · Data Exfiltration Detection · Splunk · Threat Hunting |
 
 ### 🔴 Hard
 
