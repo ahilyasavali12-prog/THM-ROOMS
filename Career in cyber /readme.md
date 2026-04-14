@@ -6,7 +6,7 @@
 **Tags:** Careers, SOC, Penetration Testing, Blue Team, Red Team, Cyber Roles
 
 ---
-
+ 
 ## 📋 Overview
 
 This room explores the many career paths available in cybersecurity — from offensive roles like penetration testing to defensive roles in SOC analysis. It helps you understand which direction to go and what skills each path requires.
