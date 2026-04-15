@@ -52,7 +52,7 @@ IPv6: 2001:db8::1     (128-bit, virtually unlimited)
 - Used for communication within the same network
 - Format: `AA:BB:CC:DD:EE:FF` (6 bytes, hexadecimal)
 - First 3 bytes = manufacturer (OUI), last 3 = device ID
-
+  
 ---
 
 ## 🔄 How Data Travels
